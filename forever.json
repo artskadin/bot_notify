@@ -1,0 +1,7 @@
+{
+  "uid": "app1",
+  "append": true,
+  "watch": true,
+  "script": "src/index.js",
+  "sourceDir": "/home/jelastic/ROOT/src"
+}
