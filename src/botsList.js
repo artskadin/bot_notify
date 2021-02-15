@@ -1,4 +1,4 @@
-const botsList = {
+module.exports = {
   'AlphaPayPoolBot': {
     'merchantId': '000',
     'telegramId': 1631761373
@@ -20,5 +20,3 @@ const botsList = {
     'telegramId': 1695042070
   }
  }
- 
- export default botsList
