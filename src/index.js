@@ -5,6 +5,7 @@ import tokens from './tokens.js'
 import botsList from './botsList.js'
 
 const app = express()
+const PORT = 3000
 
 app.get('/', (req, res) => {
   res.send('<h1>This shit is working</h1>')
@@ -23,4 +24,4 @@ bot.on('text', ctx => {
 })
 
 bot.launch()
-app.listen(3000, () => console.log('server is runnig on port 3000'))
+app.listen(PORT, () => console.log(`AlphaPayPoolBotToken is runnig on port ${PORT}`))
