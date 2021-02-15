@@ -1,7 +1,37 @@
-{
-  "uid": "app1",
-  "append": true,
-  "watch": true,
-  "script": "index.js",
-  "sourceDir": "/home/jelastic/ROOT/src"
-}
+[ 
+  {
+    "uid": "APPool",
+    "append": true,
+    "watch": true,
+    "script": "index.js",
+    "sourceDir": "/home/jelastic/ROOT/src"
+  },
+  {
+    "uid": "APGrowFinance",
+    "append": true,
+    "watch": true,
+    "script": "index.js",
+    "sourceDir": "/home/jelastic/ROOT/src/bots/APGrowFinance"
+  },
+  {
+    "uid": "APNyseBrok",
+    "append": true,
+    "watch": true,
+    "script": "index.js",
+    "sourceDir": "/home/jelastic/ROOT/src/bots/APNyseBrok"
+  },
+  {
+    "uid": "APBenefitFX",
+    "append": true,
+    "watch": true,
+    "script": "index.js",
+    "sourceDir": "/home/jelastic/ROOT/src/bots/APBenefitFX"
+  },
+  {
+    "uid": "APTryton",
+    "append": true,
+    "watch": true,
+    "script": "index.js",
+    "sourceDir": "/home/jelastic/ROOT/src/bots/APTryton"
+  }
+]
