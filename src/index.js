@@ -1,8 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const {Telegraf} = require('telegraf')
-const tokens = require('./tokens.js')
-const botsList = require('./botsList.js')
+// const botsList = require('./botsList.js')
 
 const sendDataToChildBot = require('./childBot.js')
 
@@ -13,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 const bot = new Telegraf(
-  process.env.AlphaPayPoolBotToken ?? tokens.AlphaPayPoolBotToken
+  process.env.AlphaPayPoolBotToken ?? '1631761373:AAGwVdXFRMzpp4uc5yr3fnYgHcamucjRZx8'
 )
 
 app.get('/', (req, res) => {
