@@ -2,7 +2,7 @@ module.exports = {
   apps : [{
     name        : "APPool",
     script      : "./src/index.js",
-    watch       : true,
+    watch       : false,
     env: {
       "NODE_ENV": "development",
     },
@@ -12,7 +12,7 @@ module.exports = {
   },{
     name        : "APGrowFinance",
     script      : "./src/bots/APGrowFinanceBot.js",
-    watch       : true,
+    watch       : false,
     env: {
       "NODE_ENV": "development",
     },
@@ -23,7 +23,7 @@ module.exports = {
   {
     name        : "APNyseBrok",
     script      : "./src/bots/APNyseBrokBot.js",
-    watch       : true,
+    watch       : false,
     env: {
       "NODE_ENV": "development",
     },
@@ -34,7 +34,7 @@ module.exports = {
   {
     name        : "APBenefitFX",
     script      : "./src/bots/APBenefitFXBot.js",
-    watch       : true,
+    watch       : false,
     env: {
       "NODE_ENV": "development",
     },
@@ -45,7 +45,7 @@ module.exports = {
   {
     name        : "APTryton",
     script      : "./src/bots/APTrytonBot.js",
-    watch       : true,
+    watch       : false,
     env: {
       "NODE_ENV": "development",
     },
