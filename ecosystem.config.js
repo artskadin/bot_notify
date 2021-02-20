@@ -9,6 +9,49 @@ module.exports = {
     env_production : {
        "NODE_ENV": "production"
     }
+  },{
+    name        : "APGrowFinance",
+    script      : "./src/bots/APGrowFinanceBot.js",
+    watch       : true,
+    env: {
+      "NODE_ENV": "development",
+    },
+    env_production : {
+       "NODE_ENV": "production"
+    }
+  },
+  {
+    name        : "APNyseBrok",
+    script      : "./src/bots/APNyseBrokBot.js",
+    watch       : true,
+    env: {
+      "NODE_ENV": "development",
+    },
+    env_production : {
+       "NODE_ENV": "production"
+    }
+  },
+  {
+    name        : "APBenefitFX",
+    script      : "./src/bots/APBenefitFXBot.js",
+    watch       : true,
+    env: {
+      "NODE_ENV": "development",
+    },
+    env_production : {
+       "NODE_ENV": "production"
+    }
+  },
+  {
+    name        : "APTryton",
+    script      : "./src/bots/APTrytonBot.js",
+    watch       : true,
+    env: {
+      "NODE_ENV": "development",
+    },
+    env_production : {
+       "NODE_ENV": "production"
+    }
   }],
 
   deploy : {
