@@ -11,7 +11,7 @@ const sendDataToChildBot = function(botName, token, userId, data) {
 
   axios.get(url)
     .then(resp => {
-        console.log(`post запрос для ${botName} отправился успешно`);
+        console.log(`post запрос для ${botName} позьзователю ${userId} отправился успешно`);
     })
     .catch(err => {
         // Handle Error Here

@@ -45,16 +45,12 @@ bot.hears('addMeToBot', ctx => {
 })
 
 app.get('/', (req, res) => {
-  // console.log(req.query)
   res.send('server is working')
 })
 
 app.post('/', (req, res) => {
   console.log(req.query)
   try {
-    const data = JSON.stringify(req.body)
-    // console.log(data)
-
     let merchantId = '5ff582e9d5085f13cee96bc6'
     let merchantName = null
 
