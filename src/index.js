@@ -50,7 +50,7 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
   if (req.body.notifyType === 'updateOrderStatus') {
     try {
-      let merchantId = req.body.route.extraData.merchantId
+      let merchantId = req.body.order.extraData.merchantId
       let merchantName = null
   
       for (let bot in botsList) {
@@ -63,7 +63,7 @@ app.post('/', (req, res) => {
         paymentMethod: req.body.route.from.xml ?? 'отсутствует',
         amountIn: req.body.order.inAmount ?? 'отсутствует',
         amountOut: req.body.order.outAmount ?? 'отсутствует',
-        merchName: req.body.route.extraData.merchantName ?? 'отсутствует',
+        merchName: req.body.order.extraData.merchantName ?? 'отсутствует',
         ipAdress: req.body.order.ip ?? 'отсутсвует',
         email: req.body.order.routeValues[0].value ?? 'отсутствует'
       }
@@ -128,6 +128,15 @@ app.post('/', (req, res) => {
                 usersIdList[id], 
                 childBotInfo
               )
+              break
+            case '602fbe8cf4466a503bb655d8':
+              sendDataToChildBot(
+                'AlphaPayApexCryptBot',
+                process.env.AlphaPayApexCryptBotToken,
+                usersIdList[id], 
+                childBotInfo
+              )
+              break
             default:
               console.log('Неудачная попытка отправки данных платежному боту')      
           }
