@@ -90,9 +90,9 @@ app.post('/', (req, res) => {
             bot.telegram.sendMessage(usersIdList[id], generalInfo, {parse_mode:'HTML'})
           } 
           
-          if (req.body.status === 'done') {
+          if (req.body.order.status === 'done') {
             bot.telegram.sendMessage(usersIdList[id], generalInfo, {parse_mode:'HTML'})
-            
+
             switch(merchantId) {
               case '5fb52d9eff910650ff931d88': 
                 sendDataToChildBot(
