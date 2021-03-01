@@ -86,59 +86,65 @@ app.post('/', (req, res) => {
         }
         
         for (let id in usersIdList) {
-          bot.telegram.sendMessage(usersIdList[id], generalInfo, {parse_mode:'HTML'})
-  
-          switch(merchantId) {
-            case '5fb52d9eff910650ff931d88': 
-              sendDataToChildBot(
-                'AlphaPayGrowFinanceBot', 
-                process.env.AlphaPayGrowFinanceBotToken, 
-                usersIdList[id], 
-                childBotInfo
-              )
-              break
-            case '5fcf3e7c391f945a7f5e2fb4':
-              sendDataToChildBot(
-                'AlphaPayNyseBrokBot', 
-                process.env.AlphaPayNyseBrokBotToken, 
-                usersIdList[id], 
-                childBotInfo
-              )
-              break
-            case '5fe4c41ed901302554e20301':
-              sendDataToChildBot(
-                'AlphaPayBenefitFXBot',
-                process.env.AlphaPayBenefitFXBotToken, 
-                usersIdList[id], 
-                childBotInfo
-              )
-              break
-            case '5ff582e9d5085f13cee96bc6':
-              sendDataToChildBot(
-                'AlphaPayTrytonBot', 
-                process.env.AlphaPayTrytonBotToken, 
-                usersIdList[id], 
-                childBotInfo
-              )
-              break
-            case '602fbe8cf4466a503bb655d8':
-              sendDataToChildBot(
-                'AlphaPaySpaceFXBot',
-                process.env.AlphaPaySpaceFXBotToken,
-                usersIdList[id], 
-                childBotInfo
-              )
-              break
-            case '602fbe8cf4466a503bb655d8':
-              sendDataToChildBot(
-                'AlphaPayApexCryptBot',
-                process.env.AlphaPayApexCryptBotToken,
-                usersIdList[id], 
-                childBotInfo
-              )
-              break
-            default:
-              console.log('Неудачная попытка отправки данных платежному боту')      
+          if (req.body.order.status === 'inProgressPayout') {
+            bot.telegram.sendMessage(usersIdList[id], generalInfo, {parse_mode:'HTML'})
+          } 
+          
+          if (req.body.status === 'done') {
+            bot.telegram.sendMessage(usersIdList[id], generalInfo, {parse_mode:'HTML'})
+            
+            switch(merchantId) {
+              case '5fb52d9eff910650ff931d88': 
+                sendDataToChildBot(
+                  'AlphaPayGrowFinanceBot', 
+                  process.env.AlphaPayGrowFinanceBotToken, 
+                  usersIdList[id], 
+                  childBotInfo
+                )
+                break
+              case '5fcf3e7c391f945a7f5e2fb4':
+                sendDataToChildBot(
+                  'AlphaPayNyseBrokBot', 
+                  process.env.AlphaPayNyseBrokBotToken, 
+                  usersIdList[id], 
+                  childBotInfo
+                )
+                break
+              case '5fe4c41ed901302554e20301':
+                sendDataToChildBot(
+                  'AlphaPayBenefitFXBot',
+                  process.env.AlphaPayBenefitFXBotToken, 
+                  usersIdList[id], 
+                  childBotInfo
+                )
+                break
+              case '5ff582e9d5085f13cee96bc6':
+                sendDataToChildBot(
+                  'AlphaPayTrytonBot', 
+                  process.env.AlphaPayTrytonBotToken, 
+                  usersIdList[id], 
+                  childBotInfo
+                )
+                break
+              case '602fbe8cf4466a503bb655d8':
+                sendDataToChildBot(
+                  'AlphaPaySpaceFXBot',
+                  process.env.AlphaPaySpaceFXBotToken,
+                  usersIdList[id], 
+                  childBotInfo
+                )
+                break
+              case '602fbe8cf4466a503bb655d8':
+                sendDataToChildBot(
+                  'AlphaPayApexCryptBot',
+                  process.env.AlphaPayApexCryptBotToken,
+                  usersIdList[id], 
+                  childBotInfo
+                )
+                break
+              default:
+                console.log('Неудачная попытка отправки данных платежному боту')      
+            }
           }
         }
       } catch (e) {
